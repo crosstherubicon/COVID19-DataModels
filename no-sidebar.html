@@ -35,7 +35,7 @@
 					<div class="container">
 						<header class="major">
 							<h2>We used Machine Learning to Predict COVID-19 Cases in the US.</h2>
-							<p><small>Our predictions were under 3% error.</small></p>
+							<p><small>Work in progress in front end.</small></p>
 						</header>
 
 						<!-- Content -->
@@ -49,19 +49,18 @@
 			
 			<h4>Predicting Total Number of Cases in The United States</h4>
 								<blockquote></blockquote>
-
-								<h4></h4>
+					
 								<pre><code>def predict(model, baseTable=confirmed_cases_clean, windowSize=5, daysToPredict=5, country="United States of America"):
 
-    pop = world_pop_clean.loc[country][0]
-    data = baseTable.loc[country, :][-windowSize:] / pop
-    predictions = []
-    while len(predictions) < daysToPredict:
-	nextData = data[-windowSize:]
-        nextPred = model.predict(nextData)[0]
-        predictions.append(nextPred)
-        data = np.append(data, normalize(nextPred, world_pop_clean, country))
-	}
+    		pop = world_pop_clean.loc[country][0]
+    	data = baseTable.loc[country, :][-windowSize:] / pop
+   	predictions = []
+    	while len(predictions) < daysToPredict:
+		nextData = data[-windowSize:]
+        	nextPred = model.predict(nextData)[0]
+        	predictions.append(nextPred)
+        	data = np.append(data, normalize(nextPred, world_pop_clean, country))
+		}
 
 	return predictions
 	</code></pre>
